@@ -1,12 +1,13 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React from "react";
+import Navbar from "./Navbar/Navbar";
 let App=()=>{
 
   return <div>
             <h1>App Component</h1>
             <hr />
-            <Header/>
-            <Footer/>
+            <Navbar/>
          </div>
 }
 export default App;
+
+    
