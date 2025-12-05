@@ -1,19 +1,16 @@
-//without using useefffect i.e thorough event handlers
-import axios from "axios"
-import { useState } from "react"
-let User=()=>{
+//using use effect 
+import Axios from "axios"
+import { useState,useEffect } from "react"
+let Users=()=>{
     let [users,setUsers]=useState([])
-    let userHandler=()=>{
-        // console.log("Test case 123")
-        axios.get("https://jsonplaceholder.typicode.com/users")
+    useEffect(()=>{
+        Axios.get("https://jsonplaceholder.typicode.com/users")
         .then((resp)=>{setUsers(resp.data)})
-        .catch((err)=>{console.log(err.name)})
-    }
-
+        .catch()
+    },[])
     return <div>
              <h1>User Component</h1>
              <pre>{JSON.stringify(users)}</pre>
-             <button onClick={userHandler}>Get Users</button>
              <table border={2} >
                 <thead>
                     <tr>
@@ -38,6 +35,4 @@ let User=()=>{
              </table>
            </div>
 }
-export default User;
-
-
+export default Users;
